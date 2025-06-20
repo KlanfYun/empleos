@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULA </title>
+</head>
+<style>
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+body{
+    display: grid;
+    justify-content: center;
+    background-color: rgb(41, 41, 41);
+}
+.container{
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    place-items: center;
+    border: solid rgb(231, 95, 16) 1px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#caja, #caja2{
+    border: none;
+    background: none;
+    border-bottom: solid rgb(255, 255, 255) 0.3px;
+    border-radius: 1px;
+    width: 40px;
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    margin-top: 5px;
+    text-align: right;
+}
+.btn{
+    padding: 3px;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    background: none;
+    border: none;
+    background-color: rgb(231, 95, 16);
+    transition: 2 all ease-in-out;
+}
+h4{
+    color: white;
+}
+</style>
+<script>
+    function calcular(){
+        const prints = document.getElementById('prints');
+        const caja = document.getElementById('caja').value;
+        const caja2 = document.getElementById('caja2').value;
+
+        let res = caja*caja2;
+        res = res*0.0362068965511724137;
+        res = Math.round(res);
+        res = Math.floor(res);
+        document.getElementById('prints').innerHTML = "$" + res;
+    }
+</script>
+<body>
+    <div class="container">
+        <h4>CALCULAR COSTO DEL DISEÑO</h4>
+        <input type="text" id="caja" placeholder="x">
+        <input type="text" id="caja2" placeholder="y">
+        <button onclick="calcular()" style="margin: 12px;" class="btn">=</button>
+        <h4 id="prints" style="margin: -2px;"></h4>
+    </div>
+</body>
+</html>
